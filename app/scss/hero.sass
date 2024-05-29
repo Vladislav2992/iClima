@@ -1,0 +1,57 @@
+$XdelayFactor : 0.3
+$YdelayFactor: 0.2
+$dotSize: 12px
+$gridSize: 24px
+
+.hero
+  height: 100vh
+  position: relative
+  
+  .container
+    height: 100%
+    display: flex
+    flex-direction: column
+    justify-content: center
+.hero__logo
+  margin-bottom: 20px
+
+.slogan
+  font-family: 'Tahoma', sans-serif
+  font-size: 38px
+  color: #656263
+  margin-bottom: 20vh  
+.lines__wrapper 
+  display: grid
+  grid-template-columns: repeat(20, $gridSize)
+  grid-template-rows: repeat(10, $gridSize)
+  place-items: center
+  position: absolute
+  top: 40%
+  right: 5%
+  z-index: -5
+
+.line 
+  animation: dot 120s calc(var(--delay1, 0s) + var(--delay2, 0s)) infinite ease-in-out
+
+  @keyframes dot 
+    from  
+      transform: rotate(0deg) translateX($gridSize) 
+    to  
+      transform: rotate(1440deg) translateX($gridSize)
+  
+
+  @for $i from 0 to 400 
+    &:nth-child(#{$i + 1}) 
+      --hue: #{random() * 360}
+      // --hue: #{360 / 400 * $i};
+    
+  
+
+  @for $i from 0 to 20 
+    &:nth-child(20n + #{$i + 1}) 
+      --delay1: #{$i * $XdelayFactor * -1s}
+    
+    &:nth-child(n + #{20 * $i + 1}):nth-child(-n + #{20 * ($i + 1)}) 
+      --delay2: #{$i * $YdelayFactor * -1s}
+    
+  

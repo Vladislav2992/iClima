@@ -1,0 +1,83 @@
+@import 'vars'  
+
+@font-face 
+    font-family: 'Exo2'
+    src: url('../fonts/Exo2-Regular.woff2')   
+    font-style: normal
+    font-weight: 400
+@font-face 
+    font-family: 'Exo2'
+    src: url('../fonts/Exo2-Bold.woff2')   
+    font-style: normal
+    font-weight: 700
+@font-face 
+    font-family: 'Commissioner'
+    src: url('../fonts/Commissioner-Bold.woff2')   
+    font-style: normal
+    font-weight: 700
+@font-face 
+    font-family: 'Commissioner'
+    src: url('../fonts/Commissioner-Regular.woff2')   
+    font-style: normal
+    font-weight: 400
+@font-face 
+    font-family: 'Tahoma'
+    src: url('../fonts/tahoma.woff2')   
+    font-style: normal
+    font-weight: 400
+
+html
+    scroll-behavior: smooth
+    scrollbar-gutter: stable
+
+body 
+    font-family: 'Commissioner', sans-serif
+    font-size: clamp(14px, 3vw, 16px)
+    color: $dark
+    overflow-x: clip
+    position: relative
+
+    &.disabled
+        overflow: hidden
+.main
+    margin-top: 82px
+section
+    margin-bottom: clamp(40px, 19vw, 120px)
+
+a
+    color: inherit
+    text-decoration: none
+img
+    width: 100%
+p
+    line-height: 140%
+.container
+    max-width: 1270px
+    padding: 0 15px
+    margin: 0 auto
+.section__title
+    color: $black
+    font-family: 'Exo2', sans-serif
+    font-size: clamp(18px, 5vw, 20px)
+    font-weight: 700
+    margin-bottom: 20px
+
+.btn
+    display: block
+    color: $white
+    background: $green
+    border-radius: 5px
+    font-size: clamp(17px, 4vw, 24px)
+    font-weight: 700
+    font-family: 'Exo2'
+    padding: 16px 27px
+    border: none
+    outline: none
+    width: fit-content
+    cursor: pointer
+    transition: .3s
+    transition: background .2s
+
+    &:hover
+        background: $green-hover
+   

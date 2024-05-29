@@ -1,0 +1,33 @@
+@import 'vars'
+
+.contact-us
+    color: $white
+    background: $green 
+    padding: 50px 0
+    .container
+        display: grid
+        grid-template-columns: 2fr 1fr
+    h2
+        font-size: 32px
+        font-weight: 700
+        line-height: 140%
+
+    .button
+        text-transform: uppercase
+        color: $green
+        font-size: 16px
+        font-family: 'Exo2', sans-serif
+        font-weight: 700
+        padding: 20px
+        width: 280px
+        margin-left: auto
+        border: 1px solid $white
+        border-radius: 5px
+        background: $white
+        transition: color .2s, background .2s
+        cursor: pointer
+
+        &:hover
+            color: $white
+            background: $green
+
