@@ -31,3 +31,31 @@ var swiper = new Swiper(".main-product-swiper", {
     type: 'bullets',
   },
 });
+
+// табы в каталоге
+(function(){
+  const filterButtons = document.querySelectorAll('.filter-btn')
+  
+  if(filterButtons.length < 1) return 
+  filterButtons.forEach(item => {
+    item.addEventListener('click', ()=>{
+      if(item.classList.contains('active')) return
+      removeActiveClass('.filter-btn')
+      removeActiveClass('.product-description__item')
+      
+      item.classList.add('active')
+      document.querySelector(item.getAttribute('data-tab-id')).classList.add('active')
+    })
+  })
+
+  document.querySelector('.filter-btn').click()
+  console.log(document.querySelector('.filter-btn'))
+})();
+
+function removeActiveClass (itemClass) {
+  const collection = document.querySelectorAll(itemClass)
+
+  collection.forEach(item => {
+      item.classList.remove('active')
+  });
+}

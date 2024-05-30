@@ -1,0 +1,23 @@
+@import 'vars'
+
+.filters
+    margin-bottom: 45px    
+.filters-wrapper
+    display: flex
+    width: 80%
+    justify-content: space-between
+    margin-left: auto
+.filter-btn
+    border: 1px solid transparent
+    border-radius: 30px
+    background: transparent
+    cursor: pointer
+    font-size: 18px
+    padding: 5px 9px    
+    transition: color .2s, background .2s, border-color .3s
+    
+    &:hover
+        color: $green
+    &.active
+        border-color: $green
+        color: $green
