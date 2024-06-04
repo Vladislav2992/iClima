@@ -1,0 +1,39 @@
+@import 'vars'
+
+.product-description
+    .container
+        display: grid
+        grid-template-columns: 7fr 5fr
+        gap: 20px
+        align-items: center
+
+.product-description__video video
+    width: 100%
+
+.product-description__text
+    p
+        margin-bottom: 20px
+    ul
+        margin-bottom: 20px
+    li
+        position: relative
+        padding-left: 15px
+
+        &::before
+            content:''
+            position: absolute
+            width: 6px
+            height: 6px
+            background: $green
+            border-radius: 50%
+            left: 0
+            top: 10px
+
+@media(max-width: 1024px)
+    .product-description
+        .container
+            grid-template-columns: 1fr 1fr
+@media(max-width: 800px)
+    .product-description
+        .container
+            grid-template-columns: 1fr

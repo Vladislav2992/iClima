@@ -13,8 +13,15 @@
             grid-column: 1/2
             grid-row: 1/2
            
-.main-product__content p
-    margin-bottom: 20px
+.main-product__content 
+    // opacity: 0  
+    // transition: opacity 1.5s
+
+    // &._active
+    //     opacity: 1 
+    
+    p
+        margin-bottom: 20px
 
 .swiper 
     width: 100%
@@ -22,6 +29,10 @@
 .main-product-swiper
     overflow: hidden  
     position: relative
+    //transform: scale(0.5)
+    transition: transform .5s
+    &._active
+        transform: scale(1)
 
 .swiper-button-next, .swiper-button-prev
     height: 36px
@@ -70,3 +81,16 @@
     left: 0
     right: 0
     bottom: 0
+
+@media (max-width: 860px)
+    .main-product .container
+        grid-template-columns: 1fr
+    .main-product:nth-of-type(2n)
+        .main-product__content
+            grid-column: auto 
+        .main-product-swiper
+            grid-column: auto
+            grid-row: auto
+    .main-about__inner
+        max-width: 100%
+            

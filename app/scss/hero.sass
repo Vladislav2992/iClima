@@ -4,22 +4,41 @@ $dotSize: 12px
 $gridSize: 24px
 
 .hero
-  height: 100vh
+  min-height: calc(100vh - 81px)
   position: relative
+  overflow-x: clip  
   
   .container
     height: 100%
     display: flex
     flex-direction: column
     justify-content: center
+    margin-top: 20vh
 .hero__logo
-  margin-bottom: 20px
+  width: clamp(270px, 43vw, 550px)
+  opacity: 0
+  transform: translate(-120%)
+  transition: opacity 1.7s, transform 2s
+
+  &._active
+    opacity: 1
+    transform: translate(0)
+
+  svg 
+    width: 100%
+    height: auto
 
 .slogan
   font-family: 'Tahoma', sans-serif
-  font-size: 38px
+  font-size: clamp(19px, 4vw, 38px)
   color: #656263
-  margin-bottom: 20vh  
+  margin-bottom: 15vh
+  opacity: 0  
+  transition: opacity 2.5s
+
+  &._active
+    opacity: 1  
+   
 .lines__wrapper 
   display: grid
   grid-template-columns: repeat(20, $gridSize)
@@ -30,7 +49,9 @@ $gridSize: 24px
   right: 5%
   z-index: -5
 
-.line 
+.line
+  width: 1200px
+  height: 300px 
   animation: dot 120s calc(var(--delay1, 0s) + var(--delay2, 0s)) infinite ease-in-out
 
   @keyframes dot 
@@ -40,7 +61,7 @@ $gridSize: 24px
       transform: rotate(1440deg) translateX($gridSize)
   
 
-  @for $i from 0 to 400 
+  @for $i from 0 to 15 
     &:nth-child(#{$i + 1}) 
       --hue: #{random() * 360}
       // --hue: #{360 / 400 * $i};
@@ -53,5 +74,11 @@ $gridSize: 24px
     
     &:nth-child(n + #{20 * $i + 1}):nth-child(-n + #{20 * ($i + 1)}) 
       --delay2: #{$i * $YdelayFactor * -1s}
-    
-  
+
+@media (max-width: 800px)
+  .hero
+    height: calc(100vh - 61px)
+    .container
+      margin-top: 0
+  .lines__wrapper
+    top: 60%  

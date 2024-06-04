@@ -1,0 +1,45 @@
+<!--=include header.html -->
+<main class="main contacts-page">
+    <div class="breadcrumbs">
+        <div class="container">
+            <a href="/">Главная</a> / <span>Контакты</span>
+        </div>
+    </div>
+    
+    <div class="container">
+        <h1 class="main__title">Контакты</h1>
+        <div class="contacts__wrapper">
+            <div class="contacts__map" >
+                <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>
+                <div id="map"></div>
+                <p><b>Адрес:</b> г. Москва, Рязанский проспект, д.86/1, стр.3, оф.34</p>
+                <p><b>Телефон:</b> <a href="tel:+74952305071">+7 (495) 230-50-71</a></p>
+                <a href="#!" class="support-link">Сервис и поддержка</a>
+            
+                <script>
+                    const center = [55.708029, 37.830410]
+                    ymaps.ready(init);
+                    function init(){
+                        var myMap = new ymaps.Map("map", {                                
+                            center: center,                              
+                            zoom: 17,
+                            controls: []
+                        });  
+                        var myPlacemark = new ymaps.Placemark(center);
+                        myMap.geoObjects.add(myPlacemark);                      
+                    }                    
+                </script>
+            </div>
+            <div class="contacts__form anim-items">
+                <p class="leave-question">Вы можете оставить свой вопрос и мы обязательно на него ответим</p>
+                <input type="text" class="form__input" placeholder="Имя">
+                <input type="email" class="form__input" placeholder="Эл. почта">
+                <textarea class="form__input textarea" placeholder="Сообщение"></textarea>
+                <span class="form__agree"> Нажимая кнопку “Отправить”, Вы соглашаетесь с <a href="#!">Политикой конфиденциальности</a></span>
+                <button class="btn">ОТПРАВИТЬ</button>
+            </div>
+        </div>
+    </div>
+     <!--=include interesting.html -->
+</main>
+<!--=include footer.html -->

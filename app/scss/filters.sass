@@ -1,10 +1,10 @@
 @import 'vars'
 
 .filters
-    margin-bottom: 45px    
+    margin-bottom: clamp(24px,6vw,45px)    
 .filters-wrapper
     display: flex
-    width: 80%
+    max-width: 970px
     justify-content: space-between
     margin-left: auto
 .filter-btn
@@ -12,7 +12,7 @@
     border-radius: 30px
     background: transparent
     cursor: pointer
-    font-size: 18px
+    font-size: clamp(16px, 3vw, 18px)
     padding: 5px 9px    
     transition: color .2s, background .2s, border-color .3s
     
@@ -21,3 +21,12 @@
     &.active
         border-color: $green
         color: $green
+
+@media (max-width:970px)
+    .filters-wrapper
+        max-width: 100%
+        flex-wrap: wrap
+        justify-content: space-around
+@media (max-width:670px)
+    .filters-wrapper
+        justify-content: flex-start

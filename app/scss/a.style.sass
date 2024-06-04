@@ -47,7 +47,7 @@ body
     margin-top: 82px
     flex: 1 1 auto
 section
-    margin-bottom: clamp(40px, 19vw, 120px)
+    margin-bottom: clamp(40px, 18vw, 120px)
 
 a
     color: inherit
@@ -64,6 +64,11 @@ button
     max-width: 1270px
     padding: 0 15px
     margin: 0 auto
+.main__title
+    font-family: 'Exo2', sans-serif
+    font-size: clamp(32px, 6vw, 68px)
+    font-weight: 700
+    margin-bottom: clamp(32px, 5vw, 50px)
 .section__title
     color: $black
     font-family: 'Exo2', sans-serif
@@ -86,12 +91,17 @@ button
     cursor: pointer
     transition: .3s
     transition: background .2s
+    text-align: center
 
     &:hover
         background: $green-hover
-
 .breadcrumbs
-    margin: 45px 0
+    margin-top: clamp(24px, 6vw, 45px)
+    margin-bottom: clamp(24px, 6vw, 45px)
 
     a:hover
         text-decoration: underline
+
+@media(max-width: 800px)
+    .main
+        margin-top: 61px

@@ -1,8 +1,7 @@
 @import 'vars'    
 .interesting__wrapper 
-    display: grid
-    grid-template-columns: repeat(4, 1fr)
-    gap: 20px   
+    overflow-x: clip
+    padding: 0 5px  
 
 .interesting__card
     border-radius: 10px
@@ -16,8 +15,8 @@
         box-shadow: 0 6px 4px rgba(0,0,0, .25)
 
 .interesting__card-img
-    height: 260px
-
+    height: clamp(180px, 23vw, 260px)
+    margin-bottom: 10px
     img
         height: 100%
         object-fit: contain
@@ -27,7 +26,7 @@
     font-size: 14px
     margin-bottom: 25px
     span
-        font-size: 18px
+        font-size: clamp(14px, 4vw, 18px)
         font-weight: 700
         transition: color .2s
 
@@ -50,3 +49,12 @@
     font-size: 18px
     font-weight: 700
 
+@media(max-width: 950px)
+    .interesting__card
+        padding: 10px
+    .interesting__card-bottom .btn
+        padding: 4px 6px
+    .interesting__card-price
+        font-size: 16px
+    .interesting__card-title
+        margin-bottom: 10px

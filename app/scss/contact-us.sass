@@ -7,8 +7,9 @@
     .container
         display: grid
         grid-template-columns: 2fr 1fr
+        align-items: center
     h2
-        font-size: 32px
+        font-size: clamp(24px, 4vw, 32px)
         font-weight: 700
         line-height: 140%
 
@@ -20,6 +21,7 @@
         font-weight: 700
         padding: 20px
         width: 280px
+        height: fit-content
         margin-left: auto
         border: 1px solid $white
         border-radius: 5px
@@ -30,4 +32,10 @@
         &:hover
             color: $white
             background: $green
+@media (max-width: 800px)
+    .contact-us 
+        .container
+            grid-template-columns: 1fr
+        .button
+            margin: 20px 0 0 0
 

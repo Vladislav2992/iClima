@@ -1,0 +1,35 @@
+.product-page__characteristics 
+    margin-bottom: clamp(40px, 18vw, 120px)
+    .container
+        display: grid
+        grid-template-columns: 1fr 1fr
+        gap: 20px
+
+    .right
+        display: flex
+        flex-direction: column
+
+        .download
+            font-size: 16px
+            margin-bottom: 10px
+            text-decoration: underline
+    
+    .right__bottom
+        display: flex
+        justify-content: space-between
+        align-items: center
+        margin-top: auto
+
+        .btn
+            font-size: 16px
+            max-width: 175px
+            width: 100%
+            text-align: center  
+.product-page__price
+    font-weight: 700
+    font-size: clamp(18px,4vw,24px)
+    font-family: 'Exo2', sans-serif
+
+@media(max-width:820px)
+    .product-page__characteristics .container   
+        grid-template-columns: 1fr

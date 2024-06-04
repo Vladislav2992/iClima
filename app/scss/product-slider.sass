@@ -1,0 +1,71 @@
+@import 'vars'
+
+.product-slider 
+    padding-top: clamp(40px, 10vw, 100px)
+    padding-bottom: clamp(40px, 10vw, 100px)
+    background: $green
+    overflow: hidden
+    margin-bottom: clamp(40px, 19vw, 120px)
+    
+    .container
+        display: grid
+        grid-template-columns: 1fr 5fr
+        gap: 10px
+.product-slider__buttons
+    position: relative
+    z-index: 2 
+    display: flex
+    flex-direction: column
+    gap: 5px
+    justify-content: center
+    &::after
+        content:''
+        position: absolute
+        width: 200%
+        height: 200%
+        top: -50%
+        left: -50%
+        z-index: 1
+        background: #fff
+        transform: rotate(17deg)
+
+.product-slider__button
+    background: transparent 
+    padding: 5px 8px
+    border: 1px solid transparent
+    border-radius: 30px
+    max-width: 200px
+    position: relative
+    z-index: 2
+    font-size: 16px
+    text-align: left
+    cursor: pointer
+    transition: color .2s, border-color .2s
+
+    &.active
+        border-color: $green
+        color: $green
+.product-slider__slides
+    position: relative
+    z-index: 2
+.product-slider__slide
+    visibility: hidden
+    opacity: 0
+    transition: visibility .2s, opacity .2s
+    display: none
+    &.active
+        display: block
+        visibility: visible
+        opacity: 1
+
+@media (max-width: 1024px)
+    .product-slider .container
+        grid-template-columns: 1fr
+        gap: 20px
+    .product-slider__buttons
+        flex-direction: row
+        flex-wrap: wrap
+    .product-slider__button
+        border-color: $dark
+        font-size: 12px
+        text-align: center

@@ -1,0 +1,37 @@
+.about-page p
+    max-width: 500px
+    margin-bottom: 20px
+    
+.about__hero
+    height: 100vh
+    position: relative
+    overflow: hidden
+    &::before
+        content: ""
+        position: absolute
+        display: block
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        background-image: url('../images/about-bg.avif')
+        background-size: cover
+        background-position: center
+        transform-origin: center
+        z-index: -1
+
+    .container
+        position: relative
+        height: 100%
+.about__inner
+    max-width: 500px
+    position: absolute
+    right: 15%
+    top: 15%
+.about__description
+    height: 100vh
+    .container
+        height: 100%
+        display: flex
+        flex-direction: column
+        justify-content: center

@@ -19,12 +19,17 @@
     overflow: hidden
     border-radius: 5px
     margin-bottom: 15px
+    max-height: 240px
+
+    img
+        object-fit: cover
+        object-position: center
 .main-news__title
-    font-size: 18px
+    font-size: clamp(16px, 2vw, 18px)
     font-weight: 700
     margin-bottom: 15px
     line-height: 140%
-     transition: .3s
+    transition: .3s
     &:hover
         color: $green
 .main-news__bottom
@@ -53,3 +58,12 @@
         color: $green
         &::after
             right: 0
+
+@media (max-width: 860px)
+    .main-news__wrapper
+        gap: 10px
+    .main-news__item
+        padding: 10px
+@media (max-width: 660px)
+    .main-news__wrapper
+        grid-template-columns: 1fr
