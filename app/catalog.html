@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iClima</title>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />    
     <link rel="stylesheet" href="css/style.min.css">
 </head>
@@ -29,14 +31,20 @@
             </div>
             <nav class="menu">
                 <ul class="header__menu-list">
-                    <li><a href="#!">Главная</a></li>
-                    <li><a href="#!">Каталог</a></li>
-                    <li><a href="#!">О компании</a></li>
-                    <li><a href="#!">Новости</a></li>
-                    <li><a href="#!">Контакты</a></li>
+                    <li><a href="/index.html">Главная</a></li>
+                    <li><a href="/catalog.html">Каталог</a></li>
+                    <li><a href="/about.html">О компании</a></li>
+                    <li><a href="/news.html">Новости</a></li>
+                    <li><a href="/contacts.html">Контакты</a></li>
                 </ul>
             </nav>
+            <div class="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
+        <div class="shadow-devider"></div>
     </header>
    
 <main class="main catalog-page">
@@ -57,15 +65,15 @@
                 </div>
             </div>
         </div>
-        <div class="product-description">
-            <div class="product-description__item" id="all-products">На нашем сайте Вы можете найти наиболее подходящий для себя и своей семьи инструмент для борьбы с аллергенами, грибками и другими микрочастицами, загрязняющими воздух</div>
-            <div class="product-description__item" id="climate-complexes">Климатический комплекс – это универсальное электрическое автоматическое устройство, предназначенное для поддержания микроклимата внутри помещения. Оно отличается компактностью и мобильностью. У нас Вы можете выбрать для себя наиболее подходящую модель</div>
-            <div class="product-description__item" id="air-washers">Мойка засасывает все крупные частицы, которые находятся в воздухе: пыль, пыльцу, тополиный пух и какие-то невидимые человеческому глазу частицы. Что касается аллергии, то не совсем правильно будет называть мойку борцом с аллергенами. Простой пример: у человека может быть аллергия на пыль и пыль для него аллерген. Мойка легко справляется с пылью и помогает человеку. Если у человека аллергия на какие-то мельчайшие соединения, например, пыльцу цветущих растений, которые мойка удержать не может, или запахи, то здесь мойка не поможет. Грань достаточно тонкая.</div>
-            <div class="product-description__item" id="air-purifiers">Очиститель воздуха – устройство для глубокого очищения воздуха механическим путем. Прибор работает в режиме рециркуляции воздуха и постоянно пропускает воздух через свою фильтрационную систему. Внутри нет никакой воды, а установлен вот такой фильтр, который зовется HEPA-фильтром и имеет свой класс – от 10 до 14. Именно он удерживает мельчайшие частицы пыли, с которыми мойка воздуха никогда не справится. Он в состоянии удерживать и химические соединения: например, вы заехали в новую квартиру, купили корпусную мебель, а в ней содержится формальдегид и метанол, которые очень вредят здоровью человека, а при наличии хорошего очистителя воздуха вы сможете спать спокойно и не переживать за свое здоровье.</div>
-            <div class="product-description__item" id="humidifiers">Увлажнитель воздуха — климатический прибор, использующийся в первую очередь для повышения влажности воздуха в помещениях. Функциональность увлажнения также может присутствовать в дорогих экземплярах кондиционирования воздуха и вентиляции.</div>
+        <div class="catalog__product-description">
+            <div class="catalog__product-description-item" id="all-products">На нашем сайте Вы можете найти наиболее подходящий для себя и своей семьи инструмент для борьбы с аллергенами, грибками и другими микрочастицами, загрязняющими воздух</div>
+            <div class="catalog__product-description-item" id="climate-complexes">Климатический комплекс – это универсальное электрическое автоматическое устройство, предназначенное для поддержания микроклимата внутри помещения. Оно отличается компактностью и мобильностью. У нас Вы можете выбрать для себя наиболее подходящую модель</div>
+            <div class="catalog__product-description-item" id="air-washers">Мойка засасывает все крупные частицы, которые находятся в воздухе: пыль, пыльцу, тополиный пух и какие-то невидимые человеческому глазу частицы. Что касается аллергии, то не совсем правильно будет называть мойку борцом с аллергенами. Простой пример: у человека может быть аллергия на пыль и пыль для него аллерген. Мойка легко справляется с пылью и помогает человеку. Если у человека аллергия на какие-то мельчайшие соединения, например, пыльцу цветущих растений, которые мойка удержать не может, или запахи, то здесь мойка не поможет. Грань достаточно тонкая.</div>
+            <div class="catalog__product-description-item" id="air-purifiers">Очиститель воздуха – устройство для глубокого очищения воздуха механическим путем. Прибор работает в режиме рециркуляции воздуха и постоянно пропускает воздух через свою фильтрационную систему. Внутри нет никакой воды, а установлен вот такой фильтр, который зовется HEPA-фильтром и имеет свой класс – от 10 до 14. Именно он удерживает мельчайшие частицы пыли, с которыми мойка воздуха никогда не справится. Он в состоянии удерживать и химические соединения: например, вы заехали в новую квартиру, купили корпусную мебель, а в ней содержится формальдегид и метанол, которые очень вредят здоровью человека, а при наличии хорошего очистителя воздуха вы сможете спать спокойно и не переживать за свое здоровье.</div>
+            <div class="catalog__product-description-item" id="humidifiers">Увлажнитель воздуха — климатический прибор, использующийся в первую очередь для повышения влажности воздуха в помещениях. Функциональность увлажнения также может присутствовать в дорогих экземплярах кондиционирования воздуха и вентиляции.</div>
         </div>
         <div class="catalog-list">
-            <div class="product-item">
+            <div class="product-item anim-items">
                 <div class="product-item__photos">
                     <div class="product-item__photo">
                         <img src="images/1.avif" alt="">
@@ -82,7 +90,7 @@
                 </div>
                 <div class="product-item__info">
                     <div class="type">Климатический комплекс</div>
-                    <div class="title">iClima LUX-5000W</div>
+                    <h3 class="title"><a href="/product.html">iClima LUX-5000W</a></h3>
                     <div class="characteristic">
                         <div class="name">Парметры сети</div>
                         <span></span>
@@ -118,10 +126,10 @@
                 </div>
                 <div class="product-item__buy">
                     <span class="product-item__price">от 99 999 ₽</span>
-                    <button class="btn">Заказать</button>
+                    <a href="/product.html" class="btn">Заказать</a>
                 </div>
             </div>
-            <div class="product-item">
+            <div class="product-item anim-items">
                 <div class="product-item__photos">
                     <div class="product-item__photo">
                         <img src="images/1.avif" alt="">
@@ -138,7 +146,7 @@
                 </div>
                 <div class="product-item__info">
                     <div class="type">Климатический комплекс</div>
-                    <div class="title">iClima LUX-5000W</div>
+                    <h3 class="title"><a href="/product.html">iClima LUX-5000W</a></h3>
                     <div class="characteristic">
                         <div class="name">Парметры сети</div>
                         <span></span>
@@ -174,10 +182,10 @@
                 </div>
                 <div class="product-item__buy">
                     <span class="product-item__price">от 99 999 ₽</span>
-                    <button class="btn">Заказать</button>
+                    <a href="/product.html" class="btn">Заказать</a>
                 </div>
             </div>
-            <div class="product-item">
+            <div class="product-item anim-items">
                 <div class="product-item__photos">
                     <div class="product-item__photo">
                         <img src="images/1.avif" alt="">
@@ -194,7 +202,7 @@
                 </div>
                 <div class="product-item__info">
                     <div class="type">Климатический комплекс</div>
-                    <div class="title">iClima LUX-5000W</div>
+                    <h3 class="title"><a href="/product.html">iClima LUX-5000W</a></h3>
                     <div class="characteristic">
                         <div class="name">Парметры сети</div>
                         <span></span>
@@ -230,10 +238,10 @@
                 </div>
                 <div class="product-item__buy">
                     <span class="product-item__price">от 99 999 ₽</span>
-                    <button class="btn">Заказать</button>
+                    <a href="/product.html" class="btn">Заказать</a>
                 </div>
             </div>
-            <div class="product-item">
+            <div class="product-item anim-items">
                 <div class="product-item__photos">
                     <div class="product-item__photo">
                         <img src="images/1.avif" alt="">
@@ -250,7 +258,7 @@
                 </div>
                 <div class="product-item__info">
                     <div class="type">Климатический комплекс</div>
-                    <div class="title">iClima LUX-5000W</div>
+                    <h3 class="title"><a href="/product.html">iClima LUX-5000W</a></h3>
                     <div class="characteristic">
                         <div class="name">Парметры сети</div>
                         <span></span>
@@ -286,10 +294,10 @@
                 </div>
                 <div class="product-item__buy">
                     <span class="product-item__price">от 99 999 ₽</span>
-                    <button class="btn">Заказать</button>
+                    <a href="/product.html" class="btn">Заказать</a>
                 </div>
             </div>
-            <div class="product-item">
+            <div class="product-item anim-items">
                 <div class="product-item__photos">
                     <div class="product-item__photo">
                         <img src="images/1.avif" alt="">
@@ -306,7 +314,7 @@
                 </div>
                 <div class="product-item__info">
                     <div class="type">Климатический комплекс</div>
-                    <div class="title">iClima LUX-5000W</div>
+                    <h3 class="title"><a href="/product.html">iClima LUX-5000W</a></h3>
                     <div class="characteristic">
                         <div class="name">Парметры сети</div>
                         <span></span>
@@ -342,10 +350,10 @@
                 </div>
                 <div class="product-item__buy">
                     <span class="product-item__price">от 99 999 ₽</span>
-                    <button class="btn">Заказать</button>
+                    <a href="/product.html" class="btn">Заказать</a>
                 </div>
             </div>
-            <div class="product-item">
+            <div class="product-item anim-items">
                 <div class="product-item__photos">
                     <div class="product-item__photo">
                         <img src="images/1.avif" alt="">
@@ -362,7 +370,7 @@
                 </div>
                 <div class="product-item__info">
                     <div class="type">Климатический комплекс</div>
-                    <div class="title">iClima LUX-5000W</div>
+                    <h3 class="title"><a href="/product.html">iClima LUX-5000W</a></h3>
                     <div class="characteristic">
                         <div class="name">Парметры сети</div>
                         <span></span>
@@ -398,10 +406,10 @@
                 </div>
                 <div class="product-item__buy">
                     <span class="product-item__price">от 99 999 ₽</span>
-                    <button class="btn">Заказать</button>
+                    <a href="/product.html" class="btn">Заказать</a>
                 </div>
             </div>
-            <div class="product-item">
+            <div class="product-item anim-items">
                 <div class="product-item__photos">
                     <div class="product-item__photo">
                         <img src="images/1.avif" alt="">
@@ -418,7 +426,7 @@
                 </div>
                 <div class="product-item__info">
                     <div class="type">Климатический комплекс</div>
-                    <div class="title">iClima LUX-5000W</div>
+                    <h3 class="title"><a href="/product.html">iClima LUX-5000W</a></h3>
                     <div class="characteristic">
                         <div class="name">Парметры сети</div>
                         <span></span>
@@ -454,10 +462,10 @@
                 </div>
                 <div class="product-item__buy">
                     <span class="product-item__price">от 99 999 ₽</span>
-                    <button class="btn">Заказать</button>
+                    <a href="/product.html" class="btn">Заказать</a>
                 </div>
             </div>
-            <div class="product-item">
+            <div class="product-item anim-items">
                 <div class="product-item__photos">
                     <div class="product-item__photo">
                         <img src="images/1.avif" alt="">
@@ -474,7 +482,7 @@
                 </div>
                 <div class="product-item__info">
                     <div class="type">Климатический комплекс</div>
-                    <div class="title">iClima LUX-5000W</div>
+                    <h3 class="title"><a href="/product.html">iClima LUX-5000W</a></h3>
                     <div class="characteristic">
                         <div class="name">Парметры сети</div>
                         <span></span>
@@ -510,10 +518,10 @@
                 </div>
                 <div class="product-item__buy">
                     <span class="product-item__price">от 99 999 ₽</span>
-                    <button class="btn">Заказать</button>
+                    <a href="/product.html" class="btn">Заказать</a>
                 </div>
             </div>
-            <div class="product-item">
+            <div class="product-item anim-items">
                 <div class="product-item__photos">
                     <div class="product-item__photo">
                         <img src="images/1.avif" alt="">
@@ -530,7 +538,7 @@
                 </div>
                 <div class="product-item__info">
                     <div class="type">Климатический комплекс</div>
-                    <div class="title">iClima LUX-5000W</div>
+                    <h3 class="title"><a href="/product.html">iClima LUX-5000W</a></h3>
                     <div class="characteristic">
                         <div class="name">Парметры сети</div>
                         <span></span>
@@ -566,7 +574,7 @@
                 </div>
                 <div class="product-item__buy">
                     <span class="product-item__price">от 99 999 ₽</span>
-                    <button class="btn">Заказать</button>
+                    <a href="/product.html" class="btn">Заказать</a>
                 </div>
             </div>
         </div>
@@ -574,46 +582,79 @@
     <section class="interesting">
         <div class="container">
             <h2 class="section__title">Возможно, Вас также заинтересует</h2>
-            <div class="interesting__wrapper">
-                <div class="interesting__card">
-                    <div class="interesting__card-img">
-                        <img src="images/2.avif" alt="">
+            <div class="interesting__wrapper interesting__slider">
+                <div class="swiper-wrapper">                
+                    <div class="interesting__card swiper-slide">
+                        <div class="interesting__card-img">
+                            <img src="images/2.avif" alt="">
+                        </div>
+                        <h3 class="interesting__card-title"><a href="#!">Климатический комплекс <br> <span>iClima LUX-5000W</span></a></h3>
+                        <div class="interesting__card-bottom">
+                            <span class="interesting__card-price">от 99 999 ₽</span>
+                            <a href="" class="interesting__card-btn btn">ПОДРОБНЕЕ</a>
+                        </div>
                     </div>
-                    <h3 class="interesting__card-title"><a href="#!">Климатический комплекс <br> <span>iClima LUX-5000W</span></a></h3>
-                    <div class="interesting__card-bottom">
-                        <span class="interesting__card-price">от 99 999 руб</span>
-                        <a href="" class="interesting__card-btn btn">ПОДРОБНЕЕ</a>
+                    <div class="interesting__card swiper-slide">
+                        <div class="interesting__card-img">
+                            <img src="images/2.avif" alt="">
+                        </div>
+                        <h3 class="interesting__card-title"><a href="#!">Климатический комплекс <br> <span>iClima LUX-5000W</span></a></h3>
+                        <div class="interesting__card-bottom">
+                            <span class="interesting__card-price">от 99 999 ₽</span>
+                            <a href="" class="interesting__card-btn btn">ПОДРОБНЕЕ</a>
+                        </div>
                     </div>
-                </div>
-                <div class="interesting__card">
-                    <div class="interesting__card-img">
-                        <img src="images/1.avif" alt="">
+                    <div class="interesting__card swiper-slide">
+                        <div class="interesting__card-img">
+                            <img src="images/2.avif" alt="">
+                        </div>
+                        <h3 class="interesting__card-title"><a href="#!">Климатический комплекс <br> <span>iClima LUX-5000W</span></a></h3>
+                        <div class="interesting__card-bottom">
+                            <span class="interesting__card-price">от 99 999 ₽</span>
+                            <a href="" class="interesting__card-btn btn">ПОДРОБНЕЕ</a>
+                        </div>
                     </div>
-                    <h3 class="interesting__card-title"><a href="#!">Климатический комплекс <br> <span>iClima LUX-5000W</span></a></h3>
-                    <div class="interesting__card-bottom">
-                        <span class="interesting__card-price">от 99 999 руб</span>
-                        <a href="" class="interesting__card-btn btn">ПОДРОБНЕЕ</a>
+                    <div class="interesting__card swiper-slide">
+                        <div class="interesting__card-img">
+                            <img src="images/2.avif" alt="">
+                        </div>
+                        <h3 class="interesting__card-title"><a href="#!">Климатический комплекс <br> <span>iClima LUX-5000W</span></a></h3>
+                        <div class="interesting__card-bottom">
+                            <span class="interesting__card-price">от 99 999 ₽</span>
+                            <a href="" class="interesting__card-btn btn">ПОДРОБНЕЕ</a>
+                        </div>
                     </div>
-                </div>
-                <div class="interesting__card">
-                    <div class="interesting__card-img">
-                        <img src="images/3.avif" alt="">
+                    <div class="interesting__card swiper-slide">
+                        <div class="interesting__card-img">
+                            <img src="images/2.avif" alt="">
+                        </div>
+                        <h3 class="interesting__card-title"><a href="#!">Климатический комплекс <br> <span>iClima LUX-5000W</span></a></h3>
+                        <div class="interesting__card-bottom">
+                            <span class="interesting__card-price">от 99 999 ₽</span>
+                            <a href="" class="interesting__card-btn btn">ПОДРОБНЕЕ</a>
+                        </div>
                     </div>
-                    <h3 class="interesting__card-title"><a href="#!">Климатический комплекс <br> <span>iClima LUX-5000W</span></a></h3>
-                    <div class="interesting__card-bottom">
-                        <span class="interesting__card-price">от 99 999 руб</span>
-                        <a href="" class="interesting__card-btn btn">ПОДРОБНЕЕ</a>
+                    <div class="interesting__card swiper-slide">
+                        <div class="interesting__card-img">
+                            <img src="images/2.avif" alt="">
+                        </div>
+                        <h3 class="interesting__card-title"><a href="#!">Климатический комплекс <br> <span>iClima LUX-5000W</span></a></h3>
+                        <div class="interesting__card-bottom">
+                            <span class="interesting__card-price">от 99 999 ₽</span>
+                            <a href="" class="interesting__card-btn btn">ПОДРОБНЕЕ</a>
+                        </div>
                     </div>
-                </div>
-                <div class="interesting__card">
-                    <div class="interesting__card-img">
-                        <img src="images/4.avif" alt="">
+                    <div class="interesting__card swiper-slide">
+                        <div class="interesting__card-img">
+                            <img src="images/2.avif" alt="">
+                        </div>
+                        <h3 class="interesting__card-title"><a href="#!">Климатический комплекс <br> <span>iClima LUX-5000W</span></a></h3>
+                        <div class="interesting__card-bottom">
+                            <span class="interesting__card-price">от 99 999 ₽</span>
+                            <a href="" class="interesting__card-btn btn">ПОДРОБНЕЕ</a>
+                        </div>
                     </div>
-                    <h3 class="interesting__card-title"><a href="#!">Климатический комплекс <br> <span>iClima LUX-5000W</span></a></h3>
-                    <div class="interesting__card-bottom">
-                        <span class="interesting__card-price">от 99 999 руб</span>
-                        <a href="" class="interesting__card-btn btn">ПОДРОБНЕЕ</a>
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -690,6 +731,27 @@
         </div>
     </div>
 </footer>
+<div class="modal" id="modal-form">
+    <div class="overlay close-modal"></div>
+        <div class="modal__inner">
+            <button class="close-modal close-modal-btn">
+                <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M18.5363 2.70292C19.1546 2.08459 19.1546 1.08208 18.5363 0.463748C17.9179 -0.154583 16.9154 -0.154583 16.2971 0.463748L9.5 7.26083L2.70292 0.463749C2.08459 -0.154581 1.08208 -0.154581 0.463748 0.463749C-0.154583 1.08208 -0.154583 2.08459 0.463748 2.70292L7.26083 9.5L0.463748 16.2971C-0.154583 16.9154 -0.154583 17.9179 0.463748 18.5363C1.08208 19.1546 2.08459 19.1546 2.70292 18.5363L9.5 11.7392L16.2971 18.5363C16.9154 19.1546 17.9179 19.1546 18.5363 18.5363C19.1546 17.9179 19.1546 16.9154 18.5363 16.2971L11.7392 9.5L18.5363 2.70292Z" fill="#122847"/>
+                </svg>                      
+            </button>
+            <form class="modal__form">
+                <div class="modal__form-inner">
+                <h2 class="form__title">Оставьте Ваши контактные данные и мы с Вами свяжемся в ближайшее время!</h2>
+                <input type="text" class="form__input" placeholder="Имя">
+                <input type="email" class="form__input" placeholder="Эл. почта">
+                <textarea class="form__input textarea" placeholder="Сообщение"></textarea>
+                <span class="form__agree">Нажимая кнопку "Отправить", Вы соглашаетесь с <a href="#!">Политикой конфиденциальности</a> </span>
+                <button class="btn send-form-btn">Отправить</button>
+                </div> 
+            </form>
+        </div>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="js/main.min.js"></script>
 </body>
