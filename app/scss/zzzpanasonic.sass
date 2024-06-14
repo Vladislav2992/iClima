@@ -1,0 +1,301 @@
+@import 'vars' 
+.panasonic
+    p
+        margin-bottom: 20px 
+
+        &:last-child
+            margin-bottom: 0  
+.panasonic__hero
+    height: 100vh
+
+    .container
+        height: 100%
+        display: flex
+        align-items: center
+        justify-content: space-between
+    .inner-text
+        max-width: 60vw
+        .btn
+            margin-bottom: 50px
+.panasonic__technologies
+    .container
+        display: grid
+        grid-template-columns: 1fr 1fr
+        gap: 20px
+        align-items: center
+.panasonic__technologies-description
+    position: relative
+    min-height: 150px
+    height: fit-content
+    color: $white
+    p
+        margin-bottom: 20px
+    &::before
+        content: ''
+        position: absolute
+        width: 400%
+        height: 140%
+        left: -25%
+        top: -25%
+        background: linear-gradient(102deg, $white 5%, $green 5%)
+        z-index: -1
+.graph-wrapper
+    position: relative
+    width: fit-content
+.grahp-legend
+    position: absolute
+    font-weight: 700
+    font-family: 'Exo2', sans-serif
+    font-size: 16px
+    display: inline-flex
+    
+
+.mega-catcher
+    top: -13%
+    right: 2%   
+    &::before
+        content: ''
+        background: url('../images/legend-line-1.svg') no-repeat
+        width: 217px
+        height: 88px
+        margin-top: 12px
+.hepa-filter
+    top: 15%
+    right: -48%
+    &::before
+        content: ''
+        background: url('../images/legend-line-2.svg') no-repeat
+        width: 80px
+        height: 65px  
+        margin-top: 12px
+.nanoe
+    bottom: 0%
+    right: -23% 
+    align-items: baseline 
+    &::before
+        content: ''
+        background: url('../images/legend-line-3.svg') no-repeat
+        width: 125px
+        height: 27px  
+.econavi
+    bottom: -12%
+    right: 9%   
+    align-items: baseline
+    &::before
+        content: ''
+        background: url('../images/legend-line-4.svg') no-repeat
+        width: 166px
+        height: 136px 
+
+.graph svg
+    animation: scale 2s infinite alternate
+    transition: transform .2s
+    transform-origin: center
+@keyframes scale
+    0%
+        transform: scale(0.99) 
+    100%
+        transform: scale(1) rotate(3deg)
+
+.panasonic__mega-catcher
+    .container
+        position: relative
+        display: grid
+        grid-template-columns: 1fr 1fr
+        gap: 20px
+        align-items: center    
+.panasonic__mega-catcher-logo
+    margin-bottom: 20px
+    border-radius: 5px
+    width: 250px
+
+.panasonic__nanoe 
+    padding: 60px 0
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%)
+    overflow: hidden
+    filter: drop-shadow(0 0 10px white)
+    color: white
+
+    .section__title
+        color: white
+    .container
+        display: grid
+        grid-template-columns: 1fr 2fr
+        row-gap: 80px
+    p
+        margin-bottom: 20px
+
+.panasonic__nanoe-steps  
+    grid-column: 1/-1
+    display: flex
+    justify-content: space-between
+    gap: 20px
+    position: relative
+    
+    &::before
+        content: ''
+        position: absolute
+        top: -20px
+        left: 0
+        width: 300%
+        height: 2px
+        background: white
+
+@keyframes shrink 
+  0%,
+  100% 
+    transform: scale(1)
+  
+  50% 
+    transform: scale(0)
+.panasonic__nanoe-logo svg
+    width: 100%
+.panasonic__nanoe-step
+    position: relative
+
+    .round-animation
+        position: absolute
+        top: -24px
+        left: 0
+        width: 10px
+        height: 10px
+        border-radius: 50%
+        background: white
+
+        &::before
+            content: ''
+            position: absolute
+            top: -6px
+            left: -6px
+            width: 22px
+            height: 22px
+            border-radius: 50%
+            background: transparent 
+            border: 1px solid white 
+            animation: shrink 2s infinite    
+
+@for $i from 1 through 5 
+  .panasonic__nanoe-step:nth-of-type(#{$i}) .round-animation::before 
+    animation-delay: ($i - 1) * 1s
+
+
+.dust-wrapper
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0  
+@function random_range($min, $max) 
+  $rand: random()
+  $random_range: $min + floor($rand * (($max - $min) + 1))
+  @return $random_range
+
+
+.dust 
+  $total: 200
+  position: absolute
+  width: 10px
+  height: 10px
+  background: white
+  border-radius: 50%
+
+  @for $i from 1 through $total 
+    $random-x: random(1000000) * 0.0001vw
+    $random-offset: random_range(-100000, 100000) * 0.0001vw
+    $random-x-end: $random-x + $random-offset
+    $random-x-end-yoyo: $random-x + calc($random-offset / 2)
+    $random-yoyo-time: calc(random_range(30000, 80000) / 100000)
+    $random-yoyo-y: $random-yoyo-time * 100vh
+    $random-scale: random(10000) * 0.0001
+    $fall-duration: random_range(10, 30) * 1s
+    $fall-delay: random(30) * -1s
+
+    &:nth-child(#{$i}) 
+      opacity: random(10000) * 0.0001
+      transform: translate($random-x, -10px) scale($random-scale)
+      animation: fall-#{$i} $fall-duration $fall-delay linear infinite
+    
+
+    @keyframes fall-#{$i} 
+      #{percentage($random-yoyo-time)} 
+        transform: translate($random-x-end, $random-yoyo-y) scale($random-scale)
+      
+      to 
+        transform: translate($random-x-end-yoyo, 100vh) scale($random-scale)
+      
+.panasonic__econavi
+    .container
+        display: grid
+        grid-template-columns: 1fr 1fr
+        gap: 20px
+        align-items: center
+    
+.econavi-logo
+    margin-bottom: 20px
+    width: 285px  
+    border-radius: 5px
+
+.panasonic__hepa
+    .container
+        display: grid
+        grid-template-columns: 7fr 5fr
+        gap: 20px
+        align-items: center
+.panasonic__hepa-text
+    ul
+        margin-bottom: 20px
+    li
+        position: relative
+        padding-left: 15px
+        line-height: 140%
+
+        &::before
+            content:''
+            position: absolute
+            width: 6px
+            height: 6px
+            background: $green
+            border-radius: 50%
+            left: 0
+            top: 10px  
+@media(max-width:1240px)
+    .panasonic__technologies .container
+        grid-template-columns: 1fr
+        gap: 60px
+    .graph-wrapper
+        grid-row: 2/3
+    
+@media(max-width:1150px)
+    .panasonic__nanoe .container
+        grid-template-columns: 1fr 1fr
+
+@media(max-width:850px)
+    .panasonic__hepa .container,
+    .panasonic__econavi .container,
+    .panasonic__mega-catcher .container,
+    .panasonic__nanoe .container
+        grid-template-columns: 1fr
+        gap: 20px
+    .panasonic__hepa-img,
+    .panasonic__econavi-img
+        grid-row: 2/3
+    .panasonic__nanoe-steps
+        flex-direction: column
+    .panasonic__nanoe-steps
+        li
+            padding-left: 15px
+        &::before
+            width: 2px
+            height: 150%
+            top: 7px
+    .panasonic__technologies-description::before
+        height: 110%
+        top: -9%
+    .panasonic__nanoe-step .round-animation
+        top: 5px
+        left: -5px
+@media(max-width:600px)
+    .panasonic__hero .inner-text
+        max-width: 100% 
+    .graph-wrapper
+        display: none 

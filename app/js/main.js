@@ -1,3 +1,15 @@
+(function (){
+  const dustWrapper = document.querySelector('.dust-wrapper')
+  if(dustWrapper){
+
+    for(let i = 0; i < 200; i++) {
+      const dust = document.createElement('div');
+      dust.classList.add('dust')
+      dustWrapper.appendChild(dust)
+    }
+  }
+})();
+
 // decore element
 (function(){
   const container = document.querySelector('.lines__wrapper')
@@ -381,12 +393,13 @@ openModal();
 function parallaxAboutPage() {
   const aboutHero = document.querySelector('.about__hero');
   const aboutText = document.querySelector('.about__inner');
-  console.log('hi')
-
-  document.addEventListener('scroll', (event)=>{
-    console.log(window.scrollY)
-    aboutText.style.transform = `translateY(${window.scrollY * 0.6}px)`
-  })
+ 
+  if (aboutHero && aboutText) {
+    document.addEventListener('scroll', ()=>{
+      console.log(window.scrollY)
+      aboutText.style.transform = `translateY(${window.scrollY * 0.6}px)`
+    })
+  }
   
 };
 parallaxAboutPage()
